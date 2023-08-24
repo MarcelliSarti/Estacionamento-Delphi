@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/04/10 11:02:26.000.351,=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/04/26 16:19:23.000.490,=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/04/26 16:27:57.000.738,=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/08/02 16:30:29.000.053,=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 19:35:41.000.553,=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 19:36:56.000.674,E:\Marcelli\DTCC\Estacionamento\Ulogin.pas=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 19:36:56.000.674,E:\Marcelli\DTCC\Estacionamento\Ulogin.dfm=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 19:36:59.000.943,E:\Marcelli\DTCC\Estacionamento\Ptcc.dproj=C:\Users\sql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/02/05 19:44:54.000.692,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 19:45:05.000.536,E:\Marcelli\DTCC\Estacionamento\Uprincipal.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 19:45:05.000.536,E:\Marcelli\DTCC\Estacionamento\Uprincipal.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 20:00:24.000.373,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 20:00:34.000.877,E:\Marcelli\DTCC\Estacionamento\UcadastroDeClientes.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 20:00:34.000.877,E:\Marcelli\DTCC\Estacionamento\UcadastroDeClientes.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 20:01:51.000.117,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 20:03:45.000.864,E:\Marcelli\DTCC\Estacionamento\Umodulo.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 20:03:45.000.864,E:\Marcelli\DTCC\Estacionamento\Umodulo.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 21:36:19.000.664,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 21:36:28.000.080,E:\Marcelli\DTCC\Estacionamento\UpesquisaDeClientes.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 21:36:28.000.080,E:\Marcelli\DTCC\Estacionamento\UpesquisaDeClientes.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 22:03:49.000.079,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 22:03:56.000.953,E:\Marcelli\DTCC\Estacionamento\UcadastrodeCarros.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 22:03:56.000.953,E:\Marcelli\DTCC\Estacionamento\UcadastrodeCarros.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 22:24:31.000.783,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/05 22:24:38.000.851,E:\Marcelli\DTCC\Estacionamento\UpesquisaCarro.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/05 22:24:38.000.851,E:\Marcelli\DTCC\Estacionamento\UpesquisaCarro.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/10 19:26:14.000.157,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/10 19:26:31.000.944,E:\Marcelli\DTCC\Estacionamento\Unit1.dfm=E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroCliente.dfm</Transaction>
+    <Transaction>2020/02/10 19:26:31.000.944,E:\Marcelli\DTCC\Estacionamento\Unit1.pas=E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroCliente.pas</Transaction>
+    <Transaction>2020/02/10 20:08:51.000.715,E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroCliente.pas=</Transaction>
+    <Transaction>2020/02/10 20:08:56.000.098,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/10 20:09:31.000.581,E:\Marcelli\DTCC\Estacionamento\Unit1.dfm=E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroCliente.dfm</Transaction>
+    <Transaction>2020/02/10 20:09:31.000.581,E:\Marcelli\DTCC\Estacionamento\Unit1.pas=E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroCliente.pas</Transaction>
+    <Transaction>2020/02/10 21:42:55.000.295,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/10 21:43:25.000.224,E:\Marcelli\DTCC\Estacionamento\Unit1.pas=E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroPrincipal.pas</Transaction>
+    <Transaction>2020/02/10 21:43:25.000.224,E:\Marcelli\DTCC\Estacionamento\Unit1.dfm=E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroPrincipal.dfm</Transaction>
+    <Transaction>2020/02/12 21:49:35.000.949,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/12 21:49:50.000.257,E:\Marcelli\DTCC\Estacionamento\Unit1.pas=E:\Marcelli\DTCC\Estacionamento\UpesquisaSaida.pas</Transaction>
+    <Transaction>2020/02/12 21:49:50.000.257,E:\Marcelli\DTCC\Estacionamento\Unit1.dfm=E:\Marcelli\DTCC\Estacionamento\UpesquisaSaida.dfm</Transaction>
+    <Transaction>2020/02/13 19:56:34.000.971,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/02/13 19:57:41.000.109,E:\Marcelli\DTCC\Estacionamento\Urelatorio.dfm=E:\Marcelli\DTCC\Estacionamento\Unit1.dfm</Transaction>
+    <Transaction>2020/02/13 19:57:41.000.109,E:\Marcelli\DTCC\Estacionamento\Urelatorio.pas=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/03/02 20:13:11.000.259,=E:\Marcelli\DTCC\Estacionamento\Unit1.pas</Transaction>
+    <Transaction>2020/03/16 19:38:17.944,E:\Marcelli\DTCC\Estacionamento\UcadastrodeCarros.pas=</Transaction>
+    <Transaction>2020/03/16 19:38:23.802,E:\Marcelli\DTCC\Estacionamento\UpesquisaCarro.pas=</Transaction>
+    <Transaction>2020/03/16 20:49:01.175,E:\Marcelli\DTCC\Estacionamento\UpesquisaCarroCliente.pas=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="UcadastroDeClientes.pas"/>
+    <File Path="UcadastroDeClientes.dfm"/>
+    <File Path="Ulogin.pas"/>
+    <File Path="Ulogin.dfm"/>
+    <File Path="Umodulo.pas"/>
+    <File Path="Umodulo.dfm"/>
+    <File Path="UpesquisaDeClientes.pas"/>
+    <File Path="UpesquisaDeClientes.dfm"/>
+    <File Path="Uprincipal.pas"/>
+    <File Path="Uprincipal.dfm"/>
+    <File Path="UpesquisaCarroPrincipal.pas"/>
+    <File Path="UpesquisaCarroPrincipal.dfm"/>
+    <File Path="UpesquisaSaida.pas"/>
+    <File Path="UpesquisaSaida.dfm"/>
+    <File Path="Urelatorio.pas"/>
+    <File Path="Urelatorio.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

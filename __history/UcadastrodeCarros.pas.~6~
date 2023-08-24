@@ -1,0 +1,49 @@
+unit UcadastrodeCarros;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.ToolWin,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.DBCtrls;
+
+type
+  TFRMcadastrodeCarros = class(TForm)
+    StatusBar1: TStatusBar;
+    ToolBar1: TToolBar;
+    Timer1: TTimer;
+    BTNnovo: TBitBtn;
+    ToolButton1: TToolButton;
+    BTNeditar: TBitBtn;
+    ToolButton2: TToolButton;
+    BTNsalvar: TBitBtn;
+    ToolButton3: TToolButton;
+    BTNexcluir: TBitBtn;
+    ToolButton4: TToolButton;
+    BTNcancelar: TBitBtn;
+    ToolButton5: TToolButton;
+    BTNrelatorio: TBitBtn;
+    ToolButton6: TToolButton;
+    BTNpesquisar: TBitBtn;
+    DBNavigator1: TDBNavigator;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMcadastrodeCarros: TFRMcadastrodeCarros;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFRMcadastrodeCarros.Timer1Timer(Sender: TObject);
+begin
+StatusBar1.Panels[0].Text:= datetostr(date);
+StatusBar1.Panels[1].Text:= timetostr(time);
+end;
+
+end.

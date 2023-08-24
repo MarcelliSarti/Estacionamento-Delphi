@@ -1,0 +1,53 @@
+object FRMcadastrodeCarros: TFRMcadastrodeCarros
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Carros'
+  ClientHeight = 407
+  ClientWidth = 533
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 384
+    Width = 533
+    Height = 23
+    Panels = <
+      item
+        Alignment = taCenter
+        Width = 150
+      end
+      item
+        Alignment = taCenter
+        Width = 150
+      end
+      item
+        Alignment = taCenter
+        Text = 'Trabalho de Conclus'#227'o de Curso (TCC)'
+        Width = 50
+      end>
+    ExplicitWidth = 527
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 533
+    Height = 29
+    Caption = 'ToolBar1'
+    TabOrder = 1
+    ExplicitLeft = 200
+    ExplicitTop = 208
+    ExplicitWidth = 150
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 264
+    Top = 208
+  end
+end

@@ -1,0 +1,31 @@
+unit UpesquisaSaida;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TFRMpesquisaSaida = class(TForm)
+    Label1: TLabel;
+    edtPesquisa: TEdit;
+    BTNpesquisar: TBitBtn;
+    DBGrid1: TDBGrid;
+    DBNavigator2: TDBNavigator;
+    StatusBar1: TStatusBar;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMpesquisaSaida: TFRMpesquisaSaida;
+
+implementation
+
+{$R *.dfm}
+
+end.

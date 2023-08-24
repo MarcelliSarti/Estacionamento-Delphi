@@ -1,0 +1,940 @@
+object FRMprincipal: TFRMprincipal
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Principal'
+  ClientHeight = 613
+  ClientWidth = 942
+  Color = 8552811
+  TransparentColorValue = -8573912
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poDesigned
+  OnClose = FormClose
+  OnShortCut = FormShortCut
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 8
+    Top = 8
+    Width = 440
+    Height = 140
+    Color = 12959032
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 5
+      Top = 51
+      Width = 69
+      Height = 25
+      Caption = 'Entrada'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 5
+      Top = 82
+      Width = 39
+      Height = 21
+      Caption = 'Placa:'
+      FocusControl = DBEdit1
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 5
+      Top = 109
+      Width = 33
+      Height = 21
+      Caption = 'Tipo:'
+      FocusControl = DBEdit1
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object DBEdit1: TDBEdit
+      Left = 50
+      Top = 83
+      Width = 134
+      Height = 21
+      DataField = 'Placa'
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+    object ToolBar1: TToolBar
+      Left = 1
+      Top = 1
+      Width = 438
+      Height = 33
+      ButtonHeight = 33
+      Caption = 'ToolBar1'
+      TabOrder = 1
+      object BTNnovo: TBitBtn
+        Left = 0
+        Top = 0
+        Width = 49
+        Height = 33
+        Hint = 'Nova entrada'
+        Default = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000130B0000130B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF0033333333B333
+          333B33FF33337F3333F73BB3777BB7777BB3377FFFF77FFFF77333B000000000
+          0B3333777777777777333330FFFFFFFF07333337F33333337F333330FFFFFFFF
+          07333337F3FF3FFF7F333330F00F000F07333337F77377737F333330FFFFFFFF
+          07333FF7F3FFFF3F7FFFBBB0F0000F0F0BB37777F7777373777F3BB0FFFFFFFF
+          0BBB3777F3FF3FFF77773330F00F000003333337F773777773333330FFFF0FF0
+          33333337F3FF7F37F3333330F08F0F0B33333337F7737F77FF333330FFFF003B
+          B3333337FFFF77377FF333B000000333BB33337777777F3377FF3BB3333BB333
+          3BB33773333773333773B333333B3333333B7333333733333337}
+        NumGlyphs = 2
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        OnClick = BTNnovoClick
+      end
+      object ToolButton1: TToolButton
+        Left = 49
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton1'
+        Style = tbsSeparator
+      end
+      object BTNconfirmarEntrada: TBitBtn
+        Left = 57
+        Top = 0
+        Width = 49
+        Height = 33
+        Hint = 'Confirmar Entrada'
+        Default = True
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000120B0000120B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+          555555555555555555555555555555555555555555FF55555555555559055555
+          55555555577FF5555555555599905555555555557777F5555555555599905555
+          555555557777FF5555555559999905555555555777777F555555559999990555
+          5555557777777FF5555557990599905555555777757777F55555790555599055
+          55557775555777FF5555555555599905555555555557777F5555555555559905
+          555555555555777FF5555555555559905555555555555777FF55555555555579
+          05555555555555777FF5555555555557905555555555555777FF555555555555
+          5990555555555555577755555555555555555555555555555555}
+        NumGlyphs = 2
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+        OnClick = BTNconfirmarEntradaClick
+      end
+      object ToolButton2: TToolButton
+        Left = 106
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton2'
+        ImageIndex = 0
+        Style = tbsSeparator
+      end
+      object BTNcancelarEntrada: TBitBtn
+        Left = 114
+        Top = 0
+        Width = 49
+        Height = 33
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000130B0000130B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          333333333333333333333333333333333333333FFF33FF333FFF339993370733
+          999333777FF37FF377733339993000399933333777F777F77733333399970799
+          93333333777F7377733333333999399933333333377737773333333333990993
+          3333333333737F73333333333331013333333333333777FF3333333333910193
+          333333333337773FF3333333399000993333333337377737FF33333399900099
+          93333333773777377FF333399930003999333337773777F777FF339993370733
+          9993337773337333777333333333333333333333333333333333333333333333
+          3333333333333333333333333333333333333333333333333333}
+        NumGlyphs = 2
+        TabOrder = 2
+        OnClick = BTNcancelarEntradaClick
+      end
+      object ToolButton3: TToolButton
+        Left = 163
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton3'
+        ImageIndex = 1
+        Style = tbsSeparator
+      end
+      object BTNeditar: TBitBtn
+        Left = 171
+        Top = 0
+        Width = 49
+        Height = 33
+        Hint = 'Editar'
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000120B0000120B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000000
+          000033333377777777773333330FFFFFFFF03FF3FF7FF33F3FF700300000FF0F
+          00F077F777773F737737E00BFBFB0FFFFFF07773333F7F3333F7E0BFBF000FFF
+          F0F077F3337773F3F737E0FBFBFBF0F00FF077F3333FF7F77F37E0BFBF00000B
+          0FF077F3337777737337E0FBFBFBFBF0FFF077F33FFFFFF73337E0BF0000000F
+          FFF077FF777777733FF7000BFB00B0FF00F07773FF77373377373330000B0FFF
+          FFF03337777373333FF7333330B0FFFF00003333373733FF777733330B0FF00F
+          0FF03333737F37737F373330B00FFFFF0F033337F77F33337F733309030FFFFF
+          00333377737FFFFF773333303300000003333337337777777333}
+        NumGlyphs = 2
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 4
+        OnClick = BTNeditarClick
+      end
+      object ToolButton7: TToolButton
+        Left = 220
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton7'
+        ImageIndex = 2
+        Style = tbsSeparator
+      end
+      object BTNimprimirComanda: TBitBtn
+        Left = 228
+        Top = 0
+        Width = 49
+        Height = 33
+        Hint = 'Imprimir Comanda'
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000120B0000120B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
+          0003377777777777777308888888888888807F33333333333337088888888888
+          88807FFFFFFFFFFFFFF7000000000000000077777777777777770F8F8F8F8F8F
+          8F807F333333333333F708F8F8F8F8F8F9F07F333333333337370F8F8F8F8F8F
+          8F807FFFFFFFFFFFFFF7000000000000000077777777777777773330FFFFFFFF
+          03333337F3FFFF3F7F333330F0000F0F03333337F77773737F333330FFFFFFFF
+          03333337F3FF3FFF7F333330F00F000003333337F773777773333330FFFF0FF0
+          33333337F3F37F3733333330F08F0F0333333337F7337F7333333330FFFF0033
+          33333337FFFF7733333333300000033333333337777773333333}
+        NumGlyphs = 2
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 3
+        OnClick = BTNimprimirComandaClick
+      end
+    end
+    object CBtipo: TComboBox
+      Left = 80
+      Top = 110
+      Width = 137
+      Height = 21
+      ItemIndex = 0
+      TabOrder = 2
+      Text = 'Tipo de Ve'#237'culo'
+      OnChange = CBtipoChange
+      Items.Strings = (
+        'Moto'
+        'Carro')
+    end
+    object DBEdit2: TDBEdit
+      Left = 50
+      Top = 109
+      Width = 24
+      Height = 21
+      DataField = 'TipoVeic'
+      DataSource = DataSource1
+      TabOrder = 3
+    end
+    object EDTtotal: TEdit
+      Left = 304
+      Top = 34
+      Width = 121
+      Height = 21
+      TabOrder = 4
+      Visible = False
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 583
+    Width = 942
+    Height = 30
+    Panels = <
+      item
+        Alignment = taCenter
+        Width = 250
+      end
+      item
+        Alignment = taCenter
+        Width = 250
+      end
+      item
+        Alignment = taCenter
+        Text = 'Trabalho de Conclus'#227'o de Curso (TCC)'
+        Width = 50
+      end>
+  end
+  object Panel2: TPanel
+    Left = 499
+    Top = 8
+    Width = 435
+    Height = 569
+    Color = 12166997
+    ParentBackground = False
+    TabOrder = 2
+    object Label2: TLabel
+      Left = 11
+      Top = 51
+      Width = 48
+      Height = 25
+      Caption = 'Sa'#237'da'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 24
+      Top = 82
+      Width = 36
+      Height = 21
+      Caption = 'Placa'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 128
+      Top = 82
+      Width = 32
+      Height = 21
+      Caption = 'Data'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 224
+      Top = 82
+      Width = 53
+      Height = 21
+      Caption = 'Entrada'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 336
+      Top = 40
+      Width = 33
+      Height = 21
+      Caption = 'Tipo:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 334
+      Top = 67
+      Width = 60
+      Height = 21
+      Caption = '1 - moto'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 334
+      Top = 82
+      Width = 59
+      Height = 21
+      Caption = '2 - carro'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 542
+      Width = 433
+      Height = 26
+      DataSource = DataSource1
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+      Align = alBottom
+      TabOrder = 0
+    end
+    object ToolBar2: TToolBar
+      Left = 1
+      Top = 1
+      Width = 433
+      Height = 33
+      ButtonHeight = 33
+      Caption = 'ToolBar2'
+      TabOrder = 1
+      object FRMcheckSaida: TBitBtn
+        Left = 0
+        Top = 0
+        Width = 205
+        Height = 33
+        Caption = 'Confirmar sa'#237'da'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Microsoft New Tai Lue'
+        Font.Style = []
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000120B0000120B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+          555555555555555555555555555555555555555555FF55555555555559055555
+          55555555577FF5555555555599905555555555557777F5555555555599905555
+          555555557777FF5555555559999905555555555777777F555555559999990555
+          5555557777777FF5555557990599905555555777757777F55555790555599055
+          55557775555777FF5555555555599905555555555557777F5555555555559905
+          555555555555777FF5555555555559905555555555555777FF55555555555579
+          05555555555555777FF5555555555557905555555555555777FF555555555555
+          5990555555555555577755555555555555555555555555555555}
+        NumGlyphs = 2
+        ParentFont = False
+        TabOrder = 0
+        OnClick = FRMcheckSaidaClick
+      end
+      object ToolButton4: TToolButton
+        Left = 205
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton4'
+        Style = tbsSeparator
+      end
+      object BTNpesquisasaida: TBitBtn
+        Left = 213
+        Top = 0
+        Width = 205
+        Height = 33
+        Caption = 'Pesquisar'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Microsoft New Tai Lue'
+        Font.Style = []
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000130B0000130B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+          33033333333333333F7F3333333333333000333333333333F777333333333333
+          000333333333333F777333333333333000333333333333F77733333333333300
+          033333333FFF3F777333333700073B703333333F7773F77733333307777700B3
+          33333377333777733333307F8F8F7033333337F333F337F3333377F8F9F8F773
+          3333373337F3373F3333078F898F870333337F33F7FFF37F333307F99999F703
+          33337F377777337F3333078F898F8703333373F337F33373333377F8F9F8F773
+          333337F3373337F33333307F8F8F70333333373FF333F7333333330777770333
+          333333773FF77333333333370007333333333333777333333333}
+        NumGlyphs = 2
+        ParentFont = False
+        TabOrder = 1
+        OnClick = BTNpesquisasaidaClick
+      end
+    end
+  end
+  object FRMCarroPrincipal: TBitBtn
+    Left = 198
+    Top = 89
+    Width = 27
+    Height = 25
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000130B0000130B00001000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      33033333333333333F7F3333333333333000333333333333F777333333333333
+      000333333333333F777333333333333000333333333333F77733333333333300
+      033333333FFF3F777333333700073B703333333F7773F77733333307777700B3
+      33333377333777733333307F8F8F7033333337F333F337F3333377F8F9F8F773
+      3333373337F3373F3333078F898F870333337F33F7FFF37F333307F99999F703
+      33337F377777337F3333078F898F8703333373F337F33373333377F8F9F8F773
+      333337F3373337F33333307F8F8F70333333373FF333F7333333330777770333
+      333333773FF77333333333370007333333333333777333333333}
+    NumGlyphs = 2
+    TabOrder = 3
+    OnClick = FRMCarroPrincipalClick
+  end
+  object Panel3: TPanel
+    Left = 8
+    Top = 171
+    Width = 440
+    Height = 140
+    Color = 12959032
+    ParentBackground = False
+    TabOrder = 4
+    object Label6: TLabel
+      Left = 8
+      Top = 7
+      Width = 78
+      Height = 25
+      Caption = 'Controle'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label12: TLabel
+      Left = 13
+      Top = 35
+      Width = 102
+      Height = 21
+      Caption = 'Valor da Moto:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label13: TLabel
+      Left = 10
+      Top = 66
+      Width = 105
+      Height = 21
+      Caption = 'Valor do Carro:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label14: TLabel
+      Left = 10
+      Top = 101
+      Width = 104
+      Height = 21
+      Caption = 'Total de Vagas:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label15: TLabel
+      Left = 200
+      Top = 107
+      Width = 112
+      Height = 21
+      Caption = 'Vagas restantes:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 190
+      Top = 30
+      Width = 122
+      Height = 21
+      Caption = 'Valor arrecadado:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object LBLvagas: TLabel
+      Left = 322
+      Top = 109
+      Width = 4
+      Height = 21
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LBLvalor: TLabel
+      Left = 322
+      Top = 29
+      Width = 4
+      Height = 21
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object EDTvalMoto: TEdit
+      Left = 121
+      Top = 27
+      Width = 43
+      Height = 29
+      Alignment = taCenter
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Text = '2'
+    end
+    object EDTvalCarro: TEdit
+      Left = 121
+      Top = 64
+      Width = 43
+      Height = 29
+      Alignment = taCenter
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = '4'
+    end
+    object EDTtotVagas: TEdit
+      Left = 120
+      Top = 101
+      Width = 44
+      Height = 29
+      Alignment = taCenter
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Text = '20'
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 523
+    Top = 117
+    Width = 390
+    Height = 420
+    DataSource = DataSource1
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object EDTtime: TEdit
+    Left = 312
+    Top = 15
+    Width = 121
+    Height = 21
+    TabOrder = 6
+    Visible = False
+  end
+  object Panel4: TPanel
+    Left = 8
+    Top = 332
+    Width = 440
+    Height = 245
+    Color = 12959032
+    ParentBackground = False
+    TabOrder = 7
+    object Label17: TLabel
+      Left = 8
+      Top = 40
+      Width = 89
+      Height = 25
+      Caption = 'Relat'#243'rios'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object MonthCalendar1: TMonthCalendar
+      Left = 200
+      Top = 74
+      Width = 225
+      Height = 160
+      Date = 43874.837249548610000000
+      TabOrder = 0
+    end
+    object ToolBar3: TToolBar
+      Left = 1
+      Top = 1
+      Width = 438
+      Height = 33
+      ButtonHeight = 33
+      Caption = 'ToolBar3'
+      TabOrder = 1
+      object ToolButton5: TToolButton
+        Left = 0
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton5'
+        Style = tbsSeparator
+      end
+      object BTNrelatoriogeral: TBitBtn
+        Left = 8
+        Top = 0
+        Width = 114
+        Height = 33
+        Caption = 'Relat'#243'rio'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Microsoft New Tai Lue'
+        Font.Style = []
+        Glyph.Data = {
+          76010000424D7601000000000000760000002800000020000000100000000100
+          04000000000000010000120B0000120B00001000000000000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555000000
+          000055555F77777777775555000FFFFFFFF0555F777F5FFFF55755000F0F0000
+          FFF05F777F7F77775557000F0F0FFFFFFFF0777F7F7F5FFFFFF70F0F0F0F0000
+          00F07F7F7F7F777777570F0F0F0FFFFFFFF07F7F7F7F5FFFFFF70F0F0F0F0000
+          00F07F7F7F7F777777570F0F0F0FFFFFFFF07F7F7F7F5FFF55570F0F0F0F000F
+          FFF07F7F7F7F77755FF70F0F0F0FFFFF00007F7F7F7F5FF577770F0F0F0F00FF
+          0F057F7F7F7F77557F750F0F0F0FFFFF00557F7F7F7FFFFF77550F0F0F000000
+          05557F7F7F77777775550F0F0000000555557F7F7777777555550F0000000555
+          55557F7777777555555500000005555555557777777555555555}
+        NumGlyphs = 2
+        ParentFont = False
+        TabOrder = 0
+        OnClick = BTNrelatoriogeralClick
+      end
+      object ToolButton6: TToolButton
+        Left = 122
+        Top = 0
+        Width = 8
+        Caption = 'ToolButton6'
+        ImageIndex = 0
+        Style = tbsSeparator
+      end
+    end
+    object GBrelatorio: TGroupBox
+      Left = 9
+      Top = 122
+      Width = 185
+      Height = 111
+      Caption = 'Relat'#243'rio'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object GBtipo: TGroupBox
+      Left = 9
+      Top = 64
+      Width = 185
+      Height = 52
+      Caption = 'Tipo'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      object RBmes: TRadioButton
+        Left = 9
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = 'M'#234's'
+        TabOrder = 0
+        OnClick = RBmesClick
+      end
+      object RBdia: TRadioButton
+        Left = 69
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = 'Dia'
+        TabOrder = 1
+        OnClick = RBdiaClick
+      end
+    end
+    object CBentrada: TCheckBox
+      Left = 18
+      Top = 150
+      Width = 97
+      Height = 17
+      Caption = 'Entrada'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+    end
+    object CBsaida: TCheckBox
+      Left = 18
+      Top = 173
+      Width = 97
+      Height = 17
+      Caption = 'Sa'#237'da'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+    end
+    object CBvalor: TCheckBox
+      Left = 18
+      Top = 196
+      Width = 127
+      Height = 17
+      Caption = 'Valor recebido'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft New Tai Lue'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+    end
+    object DateTimePicker1: TDateTimePicker
+      Left = 200
+      Top = 47
+      Width = 225
+      Height = 21
+      Date = 43893.801674548610000000
+      Time = 43893.801674548610000000
+      TabOrder = 7
+    end
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 600
+    Top = 464
+  end
+  object MainMenu1: TMainMenu
+    Left = 552
+    Top = 464
+    object CadastrodeClientes1: TMenuItem
+      Caption = 'Cadastro de Clientes'
+      OnClick = CadastrodeClientes1Click
+    end
+    object CadastrodeVeculos1: TMenuItem
+      Caption = 'Cadastro de Ve'#237'culos'
+      OnClick = CadastrodeVeculos1Click
+    end
+  end
+  object FDTransaction1: TFDTransaction
+    Connection = DataModule1.FDConnection1
+    Left = 456
+    Top = 360
+  end
+  object FDQueryControle: TFDQuery
+    Connection = DataModule1.FDConnection1
+    Transaction = FDTransaction1
+    SQL.Strings = (
+      
+        'select * from Controle where data = CONVERT (date, GETDATE()) an' +
+        'd HoraSaida IS null')
+    Left = 456
+    Top = 408
+    object FDQueryControlePlaca: TWideStringField
+      FieldName = 'Placa'
+      Origin = 'Placa'
+      Required = True
+      FixedChar = True
+      Size = 8
+    end
+    object FDQueryControleData: TDateField
+      FieldName = 'Data'
+      Origin = 'Data'
+      Required = True
+    end
+    object FDQueryControleHoraEntrada: TTimeField
+      FieldName = 'HoraEntrada'
+      Origin = 'HoraEntrada'
+      Required = True
+    end
+    object FDQueryControleTipoVeic: TIntegerField
+      FieldName = 'TipoVeic'
+      Origin = 'TipoVeic'
+    end
+    object FDQueryControleHoraSaida: TTimeField
+      FieldName = 'HoraSaida'
+      Origin = 'HoraSaida'
+    end
+    object FDQueryControleTotal: TSingleField
+      FieldName = 'Total'
+      Origin = 'Total'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQueryControle
+    Left = 456
+    Top = 312
+  end
+  object FDQueryTotal: TFDQuery
+    Connection = DataModule1.FDConnection1
+    SQL.Strings = (
+      
+        '(select sum(total) as total from Controle where data = CONVERT (' +
+        'date, GETDATE()) )')
+    Left = 464
+    Top = 112
+    object FDQueryTotaltotal: TFloatField
+      FieldName = 'total'
+      Origin = 'total'
+      ReadOnly = True
+    end
+  end
+end

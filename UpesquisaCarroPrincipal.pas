@@ -1,0 +1,89 @@
+unit UpesquisaCarroPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ComCtrls, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFRMpesquisaCarroPrincipal = class(TForm)
+    Label1: TLabel;
+    edtPesquisa: TEdit;
+    BTNpesquisar: TBitBtn;
+    DBGrid1: TDBGrid;
+    DBNavigator2: TDBNavigator;
+    StatusBar1: TStatusBar;
+    qryPesquisa: TFDQuery;
+    qryPesquisaModelo: TWideStringField;
+    qryPesquisaCor: TWideStringField;
+    qryPesquisaPlaca: TStringField;
+    DataSource1: TDataSource;
+    Timer1: TTimer;
+    procedure edtPesquisaChange(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BTNpesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMpesquisaCarroPrincipal: TFRMpesquisaCarroPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses Umodulo, Uprincipal;
+
+procedure TFRMpesquisaCarroPrincipal.BTNpesquisarClick(Sender: TObject);
+begin
+FRMprincipal.DBEdit1.Text:= qryPesquisa.FieldValues['placa'];
+close;
+end;
+
+procedure TFRMpesquisaCarroPrincipal.edtPesquisaChange(Sender: TObject);
+begin
+if edtPesquisa.Text <> ' ' then
+Begin
+  qryPesquisa.SQL.Clear;
+  qryPesquisa.Close;
+  qryPesquisa.SQL.Add('select * from CArro');
+  qryPesquisa.SQL.Add('where placa like' + quotedstr ('%' + edtPesquisa.Text + '%'));
+    qryPesquisa.Open;
+  end
+  else
+  begin
+  qryPesquisa.SQL.Clear;
+  qryPesquisa.Close;
+  qryPesquisa.SQL.Add('select * from Carro');
+  qryPesquisa.Open;
+end;
+end;
+
+procedure TFRMpesquisaCarroPrincipal.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+qryPesquisa.Close;
+end;
+
+procedure TFRMpesquisaCarroPrincipal.FormShow(Sender: TObject);
+begin
+qryPesquisa.Open;
+end;
+
+procedure TFRMpesquisaCarroPrincipal.Timer1Timer(Sender: TObject);
+begin
+StatusBar1.Panels[0].Text:= datetostr(date);
+StatusBar1.Panels[1].Text:= timetostr(time);
+end;
+
+end.

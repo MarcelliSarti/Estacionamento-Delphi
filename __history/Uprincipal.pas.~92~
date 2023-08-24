@@ -1,0 +1,459 @@
+unit Uprincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.Menus,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.ToolWin;
+
+type
+  TFRMprincipal = class(TForm)
+    StatusBar1: TStatusBar;
+    Timer1: TTimer;
+    MainMenu1: TMainMenu;
+    CadastrodeClientes1: TMenuItem;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    CadastrodeVeculos1: TMenuItem;
+    Label1: TLabel;
+    Label2: TLabel;
+    FRMcheckSaida: TBitBtn;
+    FDTransaction1: TFDTransaction;
+    Label3: TLabel;
+    DBEdit1: TDBEdit;
+    FRMCarroPrincipal: TBitBtn;
+    Panel3: TPanel;
+    Label6: TLabel;
+    BTNconfirmarEntrada: TBitBtn;
+    BTNimprimirComanda: TBitBtn;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    BTNnovo: TBitBtn;
+    DBGrid1: TDBGrid;
+    FDQueryControle: TFDQuery;
+    DataSource1: TDataSource;
+    DBNavigator1: TDBNavigator;
+    ToolBar1: TToolBar;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    BTNcancelarEntrada: TBitBtn;
+    ToolButton3: TToolButton;
+    ToolBar2: TToolBar;
+    ToolButton4: TToolButton;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label7: TLabel;
+    Label11: TLabel;
+    CBtipo: TComboBox;
+    DBEdit2: TDBEdit;
+    EDTtime: TEdit;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    EDTvalMoto: TEdit;
+    EDTvalCarro: TEdit;
+    EDTtotVagas: TEdit;
+    BTNpesquisasaida: TBitBtn;
+    Label15: TLabel;
+    Label16: TLabel;
+    LBLvagas: TLabel;
+    LBLvalor: TLabel;
+    EDTtotal: TEdit;
+    Panel4: TPanel;
+    Label17: TLabel;
+    ToolBar3: TToolBar;
+    BTNrelatoriogeral: TBitBtn;
+    ToolButton5: TToolButton;
+    ToolButton6: TToolButton;
+    GBrelatorio: TGroupBox;
+    GBtipo: TGroupBox;
+    RBmes: TRadioButton;
+    RBdia: TRadioButton;
+    CBentrada: TCheckBox;
+    CBsaida: TCheckBox;
+    CBvalor: TCheckBox;
+    FDQueryControlePlaca: TWideStringField;
+    FDQueryControleData: TDateField;
+    FDQueryControleHoraEntrada: TTimeField;
+    FDQueryControleHoraSaida: TTimeField;
+    FDQueryControleTotal: TSingleField;
+    FDQueryControleTipoVeic: TIntegerField;
+    FDQueryTotal: TFDQuery;
+    FDQueryTotaltotal: TFloatField;
+    DateTimePicker1: TDateTimePicker;
+    BTNeditar: TBitBtn;
+    ToolButton7: TToolButton;
+    procedure Timer1Timer(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure CadastrodeClientes1Click(Sender: TObject);
+    procedure CadastrodeVeculos1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FRMCarroPrincipalClick(Sender: TObject);
+    procedure BTNconfirmarEntradaClick(Sender: TObject);
+    procedure BTNnovoClick(Sender: TObject);
+    procedure FRMcheckSaidaClick(Sender: TObject);
+    procedure CBtipoChange(Sender: TObject);
+    procedure BTNcancelarEntradaClick(Sender: TObject);
+    procedure BTNpesquisasaidaClick(Sender: TObject);
+    procedure FormShortCut(var Msg: TWMKey; var Handled: Boolean);
+    procedure RBmesClick(Sender: TObject);
+    procedure RBdiaClick(Sender: TObject);
+    procedure BTNimprimirComandaClick(Sender: TObject);
+    procedure BTNrelatoriogeralClick(Sender: TObject);
+    procedure BTNeditarClick(Sender: TObject);
+  private
+    procedure edicao;
+    procedure nedicao;
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMprincipal: TFRMprincipal;
+   tempoMin: real;
+   tempo: Tdatetime;
+   qtd, valor, total, totaldi: real;
+   I, vagas  :integer;
+
+implementation
+
+{$R *.dfm}
+
+uses UcadastroDeClientes, UcadastrodeCarros, Umodulo, UpesquisaCarroPrincipal,
+  UpesquisaSaida, Urelatorio;
+
+procedure TFRMprincipal.BTNnovoClick(Sender: TObject);
+begin
+FDQueryControle.Insert;
+edicao;
+end;
+
+procedure TFRMprincipal.BTNpesquisasaidaClick(Sender: TObject);
+begin
+FRMpesquisaSaida.Show;
+end;
+
+procedure TFRMprincipal.BTNrelatoriogeralClick(Sender: TObject);
+begin
+if (RBmes.Checked) then
+    begin
+    FRMrelatorios.FDQuerymes.Open();
+    FRMrelatorios.FDQuerymes.SQL.Clear;
+    FRMrelatorios.FDQuerymes.close;
+    FRMrelatorios.FDQuerymes.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuerymes.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuerymes.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuerymes.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuerymes.Open();
+    FRMrelatorios.frxReportmes.ShowReport();
+    end
+if (RBdia.Checked) then
+begin
+  if (CBentrada.Checked) and (CBsaida.Checked) and (CBvalor.Checked) then
+    begin
+      FRMrelatorios.FDQuery7.Open();
+    FRMrelatorios.FDQuery7.SQL.Clear;
+    FRMrelatorios.FDQuery7.close;
+    FRMrelatorios.FDQuery7.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery7.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery7.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery7.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery7.Open();
+    FRMrelatorios.frxReport7.ShowReport();
+    end
+  else
+  if (CBentrada.Checked) and (CBsaida.Checked) then
+    begin
+    FRMrelatorios.FDQuery4.Open();
+    FRMrelatorios.FDQuery4.SQL.Clear;
+    FRMrelatorios.FDQuery4.close;
+    FRMrelatorios.FDQuery4.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery4.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery4.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery4.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery4.Open();
+    FRMrelatorios.frxReport4.ShowReport();
+    end
+  else
+  if  (CBentrada.Checked) and (CBvalor.Checked) then
+  begin
+    FRMrelatorios.FDQuery5.Open();
+    FRMrelatorios.FDQuery5.SQL.Clear;
+    FRMrelatorios.FDQuery5.close;
+    FRMrelatorios.FDQuery5.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery5.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery5.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery5.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery5.Open();
+    FRMrelatorios.frxReport5.ShowReport();
+    end
+  else
+  if (CBsaida.Checked) and (CBvalor.Checked) then
+  begin
+      FRMrelatorios.FDQuery6.Open();
+    FRMrelatorios.FDQuery6.SQL.Clear;
+    FRMrelatorios.FDQuery6.close;
+    FRMrelatorios.FDQuery6.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery6.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery6.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery6.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery6.Open();
+    FRMrelatorios.frxReport6.ShowReport();
+    end
+  else
+  if (CBentrada.Checked) then
+  begin
+    FRMrelatorios.FDQuery1.Open();
+    FRMrelatorios.FDQuery1.SQL.Clear;
+    FRMrelatorios.FDQuery1.close;
+    FRMrelatorios.FDQuery1.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery1.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery1.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery1.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery1.Open();
+    FRMrelatorios.frxReport1.ShowReport();
+  end
+  else
+  if (CBsaida.Checked) then
+  begin
+    FRMrelatorios.FDQuery2.Open();
+    FRMrelatorios.FDQuery2.SQL.Clear;
+    FRMrelatorios.FDQuery2.close;
+    FRMrelatorios.FDQuery2.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery2.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery2.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery2.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery2.Open();
+    FRMrelatorios.frxReport2.ShowReport();
+  end
+  else
+  if (CBvalor.Checked) then
+    begin
+    FRMrelatorios.FDQuery3.Open();
+    FRMrelatorios.FDQuery3.SQL.Clear;
+    FRMrelatorios.FDQuery3.close;
+    FRMrelatorios.FDQuery3.SQL.add('select c.*, t.*');
+    FRMrelatorios.FDQuery3.sql.add('from controle c, tipoveic t');
+    FRMrelatorios.FDQuery3.SQL.Add('where data = :data and (c.tipoveic = t.codigo)');
+    FRMrelatorios.FDQuery3.ParamByName('data').AsDate:= (DateTimePicker1.DateTime);
+    FRMrelatorios.FDQuery3.Open();
+    FRMrelatorios.frxReport3.ShowReport();
+    end;
+end;
+end;
+
+procedure TFRMprincipal.BTNcancelarEntradaClick(Sender: TObject);
+begin
+FDQueryControle.Cancel;
+nedicao;
+end;
+
+procedure TFRMprincipal.BTNconfirmarEntradaClick(Sender: TObject);
+begin
+FDQueryControle.FieldValues['data']:= datetostr(date);
+FDQueryControle.FieldValues['HoraEntrada']:= timetostr(time);
+
+FDQueryControle.Post;
+nedicao;
+try
+  FDTransaction1.StartTransaction;
+  FDTransaction1.CommitRetaining;
+  showMessage('Entrada efetuada com sucesso');
+except
+  FDTransaction1.RollbackRetaining;
+end;
+
+//conte de vagas
+qtd:= qtd - 1;
+LBLvagas.Caption:= floattostr(qtd);
+if qtd = 0 then
+ShowMessage('LOTAÇÃO MÁXIMA');
+
+FRMcheckSaida.Enabled:= true;
+end;
+
+procedure TFRMprincipal.BTNeditarClick(Sender: TObject);
+begin
+FDQueryControle.Edit;
+edicao;
+end;
+
+procedure TFRMprincipal.BTNimprimirComandaClick(Sender: TObject);
+begin
+FRMrelatorios.FDQueryComanda.Open();
+FRMrelatorios.frxReportComanda.ShowReport();
+FRMrelatorios.FDQueryComanda.Close;
+end;
+
+procedure TFRMprincipal.CadastrodeClientes1Click(Sender: TObject);
+begin
+FRMcadastrodeClientes.Show;
+end;
+
+procedure TFRMprincipal.CadastrodeVeculos1Click(Sender: TObject);
+begin
+FRMcadastrodeCarros.Show;
+end;
+
+procedure TFRMprincipal.CBtipoChange(Sender: TObject);
+begin
+if CBtipo.ItemIndex = 0 then
+DBEdit2.Text := '1';
+if CBtipo.ItemIndex = 1 then
+DBEdit2.Text := '2';
+end;
+
+procedure TFRMprincipal.edicao;
+begin
+BTNcancelarEntrada.Enabled:= true;
+BTNconfirmarEntrada.Enabled:= true;
+BTNnovo.Enabled:= false;
+BTNeditar.Enabled:= false;
+FRMCarroPrincipal.Enabled:= true;
+end;
+
+procedure TFRMprincipal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+FDQueryControle.Close;
+FDQueryTotal.Close;
+Application.Terminate;
+end;
+
+procedure TFRMprincipal.FormShortCut(var Msg: TWMKey; var Handled: Boolean);
+begin
+LBLvagas.Caption:= floattostr(qtd);
+end;
+
+procedure TFRMprincipal.FormShow(Sender: TObject);
+var I: integer;
+begin
+FDQueryControle.Open;
+FDQueryTotal.Open;
+nedicao;
+
+//vagas
+vagas:= strtoint(EDTtotVagas.Text);
+qtd:= vagas;
+for I := 1 to FDQueryControle.RecordCount do
+qtd:= qtd - 1;
+
+LBLvagas.Caption:= floattostr(qtd);
+if (qtd <> 20) then
+FRMcheckSaida.Enabled:= true
+else
+FRMcheckSaida.Enabled:= false;
+//check box
+CBentrada.Enabled:= false;
+CBsaida.Enabled:= false;
+CBvalor.Enabled:= false;
+
+//total diario
+LBLvalor.caption:= FORMATFLOAT('0.00',FDQueryTotal.FieldValues['total']);
+
+if(RBmes.Checked = false) and (RBdia.Checked = false) then
+BTNrelatoriogeral.Enabled:= false;
+
+DateTimePicker1.Update;
+end;
+
+procedure TFRMprincipal.FRMCarroPrincipalClick(Sender: TObject);
+begin
+FRMpesquisaCarroPrincipal.Show;
+end;
+
+procedure TFRMprincipal.FRMcheckSaidaClick(Sender: TObject);
+var saida,entrada,tempo, hora: Ttime;
+var hh, totaldia: real;
+begin
+FDQueryControle.Edit;
+FDQueryControle.FieldValues['HoraSaida']:= timetostr(time);
+
+saida:= now;
+entrada:= FDQueryControle.FieldValues['HoraEntrada'];
+tempo:= saida - entrada;
+EDTtime.Text:= timetostr(tempo);
+//ShowMessage(FormatDateTime('hh:MM:ss', tempo));
+
+//convertendo em decimais
+  hora:=((strtotime(EDTtime.Text) * 1440) / 60);
+  hh := hora;
+// ShowMessage(format('%n',[hh]));
+
+//verificando o total
+if (FDQueryControle.FieldValues['tipoVeic'] = 1) then
+total:= hh * strtofloat(EDTvalMoto.Text);
+if (FDQueryControle.FieldValues['tipoVeic'] = 2) then
+total:= hh * strToFloat(EDTvalCarro.Text);
+
+FDQueryControle.FieldValues['total']:= (total);
+EDTtotal.Text:= floattostr(total);
+//Mensagem final
+showMessage('Tempo permanecido: ' + FormatDateTime('hh:MM:ss', tempo) +
+'                                                          O valor a ser pago é: R$'
++ formatfloat('0.00',total));
+
+FDQueryControle.Refresh;
+if FDQueryControle.RecordCount = 0 then
+FRMcheckSaida.Enabled:= false
+else
+FRMcheckSaida.Enabled:= true;
+
+//conte de vagas
+qtd:= qtd + 1;
+LBLvagas.Caption:= floattostr(qtd);
+
+// calculando total
+totaldia:= totaldia + strtofloat(EDTtotal.Text);
+//EDTtotaldia.Text:= formatfloat('0.00', totaldia);
+LBLvalor.Caption:= formatfloat('0.00', totaldia);
+end;
+
+procedure TFRMprincipal.nedicao;
+begin
+BTNcancelarEntrada.Enabled:= false;
+BTNconfirmarEntrada.Enabled:= false;
+FRMCarroPrincipal.Enabled:= false;
+BTNeditar.Enabled:= true;
+BTNnovo.Enabled:= true;
+end;
+
+procedure TFRMprincipal.RBdiaClick(Sender: TObject);
+begin
+if(RBmes.Checked = true) or (RBdia.Checked = true) then
+BTNrelatoriogeral.Enabled:= true;
+
+if (RBdia.Checked) then
+begin
+  CBentrada.Enabled:= true;
+  CBsaida.Enabled:= true;
+  CBvalor.Enabled:= true;
+end;
+end;
+
+procedure TFRMprincipal.RBmesClick(Sender: TObject);
+begin
+if(RBmes.Checked = true) or (RBdia.Checked = true) then
+BTNrelatoriogeral.Enabled:= true;
+
+if (RBmes.Checked) then
+begin
+CBvalor.Enabled:= true;
+CBentrada.Enabled:= false;
+CBsaida.Enabled:= false;
+end;
+end;
+
+procedure TFRMprincipal.Timer1Timer(Sender: TObject);
+begin
+StatusBar1.Panels[0].Text:= datetostr(date);
+StatusBar1.Panels[1].Text:= timetostr(time);
+
+end;
+
+end.

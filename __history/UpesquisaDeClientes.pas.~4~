@@ -1,0 +1,40 @@
+unit UpesquisaDeClientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.ComCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
+
+type
+  TFRMpesquisaCliente = class(TForm)
+    StatusBar1: TStatusBar;
+    Label1: TLabel;
+    edtPesquisa: TEdit;
+    BTNpesquisar: TBitBtn;
+    Timer1: TTimer;
+    DBNavigator1: TDBNavigator;
+    DBNavigator2: TDBNavigator;
+    DBGrid1: TDBGrid;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMpesquisaCliente: TFRMpesquisaCliente;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFRMpesquisaCliente.Timer1Timer(Sender: TObject);
+begin
+StatusBar1.Panels[0].Text:= datetostr(date);
+StatusBar1.Panels[1].Text:= timetostr(time);
+end;
+
+end.
